@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/crud-project/crud-project.iml" filepath="$PROJECT_DIR$/crud-project/crud-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/first-project/first-project.iml" filepath="$PROJECT_DIR$/first-project/first-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spring-prograd.iml" filepath="$PROJECT_DIR$/.idea/spring-prograd.iml" />
+    </modules>
+  </component>
+</project>
