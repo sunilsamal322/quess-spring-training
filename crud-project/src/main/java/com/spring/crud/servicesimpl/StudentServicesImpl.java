@@ -5,6 +5,7 @@ import com.spring.crud.models.Student;
 import com.spring.crud.repository.StudentRepository;
 import com.spring.crud.services.StudentServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,8 +16,12 @@ public class StudentServicesImpl implements StudentServices {
     @Autowired
     private StudentRepository studentRepository;
 
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
     @Override
     public Student saveStudent(Student student) {
+
+        student.setPassword(bCryptPasswordEncoder.encode(student.getPassword()));
         return studentRepository.save(student);
     }
 
@@ -40,6 +45,7 @@ public class StudentServicesImpl implements StudentServices {
         existingStudent.setEmail(student.getEmail());
         existingStudent.setRollNumber(student.getRollNumber());
         existingStudent.setGender(student.getGender());
+        existingStudent.setPassword(bCryptPasswordEncoder.encode(student.getPassword()));
         studentRepository.save(existingStudent);
         return existingStudent;
     }
